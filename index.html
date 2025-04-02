@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>niver de mabel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="passwordPage" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-600 via-purple-700 to-indigo-800 p-4">
+    <div class="w-full max-w-md text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-8">
+        ABRA O ENVELOPE
+      </h1>
+      
+      <div class="envelope mx-auto mb-10 w-64 h-40 relative">
+        <div class="envelope-flap absolute top-0 left-0 w-full h-20 bg-pink-500 z-20 transition-transform duration-500"
+             style="transform-origin: top; clip-path: polygon(0 0, 50% 100%, 100% 0);">
+        </div>
+        <div class="envelope-body absolute top-0 left-0 w-full h-40 bg-purple-700 border-2 border-white z-10">
+        </div>
+        <div class="letter absolute top-5 left-5 right-5 bottom-5 bg-white z-5 flex items-center justify-center p-4 transition-transform duration-800">
+          <div class="letter-content hidden z-30">
+            <p class="text-purple-800 text-sm md:text-base">
+              Feliz Aniversário, Mari! 🎉💖🐒
+              criei esse site como presente, espero que goste 💕
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <form id="passwordForm" class="space-y-4">
+        <div>
+          <input
+            type="text"
+            id="passwordInput"
+            placeholder="Digite a senha do seu presente"
+            class="w-full px-4 py-2 rounded border-2 border-purple-400 focus:border-purple-600 text-black"
+            maxlength="4"
+          />
+        </div>
+        <button 
+          type="submit" 
+          class="w-full bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded"
+        >
+          Abrir envelope <span class="heart">💌</span>
+        </button>
+      </form>
+      
+      <div id="accessButton" class="mt-6 hidden">
+        <button 
+          class="w-full bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded"
+          onclick="showCelebrationPage()"
+        >
+          ir pro site <span class="heart"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- notificaçao -->
+  <div id="toast" class="hidden fixed top-4 right-4 z-50 bg-red-500 text-white p-4 rounded shadow-lg">
+    <h3 class="font-bold">Errou besta</h3>
+    <p>Dica: é uma data Especial.</p>
+  </div>
+
+  <!-- Celebration Page -->
+  <div id="celebrationPage" class="hidden min-h-screen bg-gray-900 text-white relative overflow-hidden">
+    <div id="confettiContainer"></div>
+    
+    <!-- Header Image -->
+    <header class="py-10 px-4 text-center">
+      <div class="max-w-3xl mx-auto">
+        <img 
+          src="img/Design sem nome.jpg" 
+          alt="Happy Birthday" 
+          class="w-full h-48 md:h-64 object-cover rounded-lg shadow-lg"
+        />
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pb-20">
+      <!-- Polaroid Photos -->
+      <section class="mb-16">
+        <div class="grid grid-cols-3 gap-6">
+          <div class="polaroid relative cursor-pointer" data-index="0">
+            <img 
+              src="img/mariecris.jpg" 
+              alt="Memória 1" 
+              class="w-full h-44 md:h-60 object-cover"
+            />
+            <p class="text-center mt-2 text-sm text-gray-300">Você e o cris ❤️</p>
+          </div>
+          <div class="polaroid relative cursor-pointer" data-index="1">
+            <img 
+              src="img/mariecris.jpg" 
+              alt="Memória 2" 
+              class="w-full h-44 md:h-60 object-cover"
+            />
+            <p class="text-center mt-2 text-sm text-gray-300">Você e o cris ❤️</p>
+          </div>
+          <div class="polaroid relative cursor-pointer" data-index="2">
+            <img 
+              src="img/mariecris.jpg" 
+              alt="Memória 3" 
+              class="w-full h-44 md:h-60 object-cover"
+            />
+            <p class="text-center mt-2 text-sm text-gray-300">Você e o cris ❤️</p>
+          </div>
+        </div>
+      </section>
+
+      <p>Feliz Aniversário, Mari! 🎉💖🐒
+
+        Hoje é um dia especial, porque foi nele que nasceu a pessoa mais incrível que eu já conheci, sem zoeira. 
+        Você é um verdadeiro presente na minha vida, alguém que me motiva.
+        Quero ficar rico não só por mim, mas pra poder te dar tudo o que precisar no futuro, pra te ver feliz e sem preocupações. 
+        seu jeito único que me faz querer ser melhor a cada dia. Você me faz rir mesmo no meu pior dia. A melhor parte do meu final de semana é quando estou ao seu lado [pareci ate um namorado agora, oloko] 
+        . Te amo muito mari perfeitinha 💕</p>
+      
+        <section class="invi">
+          <div><p>777</p></div>
+          <div><p>777</p></div>
+        </section>
+
+      
+
+      <!-- 19 Reasons Section -->
+      <section class="mb-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-pink-500 mb-6">
+          19 Coisas Que Me Fazem Te Amar Mais
+        </h2>
+        <div class="scroll-area h-[400px] bg-gray-800 p-6 rounded-xl overflow-y-auto">
+          <div class="space-y-4 pr-4" id="reasonsList"></div>
+        </div>
+      </section>
+
+       <!-- Music Player -->
+       <section class="mb-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-pink-500 mb-6">
+          Não pode faltar músicas que me lembrem você <span class="music-icon">🎵</span>
+        </h2>
+        <div class="bg-gray-800 p-6 rounded-xl">
+          <div id="musicList"></div>
+        </div>
+      </section>
+      
+      <!-- Content section to space out the ad -->
+      <section class="mb-32">
+        <div class="h-40"></div>
+      </section>
+      
+      
+      
+
+      <section class="invi">
+        <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+            <div><p>777</p></div>
+      </section>
+    <!-- Hidden Fake Ad -->
+    
+    
+
+
+      
+      <!-- Bottom Message -->
+      <p>
+        14-15-19-19-15 -- 03-01-19-01-13-05-14-20-15 -- 06-15-09 -- 15 -- 04-09-01 -- 13-01-09-19 -- 12-09-14-04-15 -- 04-05 -- 2-0-2-7
+      </p>
+    </main>
+    
+    <!-- Secret Message Dialog -->
+    <div id="secretMessageDialog" class="fixed inset-0 z-50 hidden">
+      <div class="fixed inset-0 bg-black/60" onclick="closeDialog('secretMessageDialog')"></div>
+      <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 border border-pink-500 rounded-lg p-6 w-11/12 max-w-md">
+        <h3 class="text-pink-500 text-lg font-bold mb-4">codigo 1</h3>
+        <div class="py-4">
+          <p class="text-center text-lg text-white">03-15-14-17-21-09-19-20-01-13-15-19 -- 13-21-09-20-01-19 -- 03-15-09-19-01-19 -- 04-05-19-04-05 -- 01-17-21-21-05-12-05 -- 20-18-05-19 -- 04-05 -- 01-02-18-09-12❤️</p>
+        </div>
+        <button 
+          class="absolute right-2 top-2 text-gray-400 hover:text-white"
+          onclick="closeDialog('secretMessageDialog')"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+    
+    <!-- Special Heart Message Dialog -->
+    <div id="specialMessageDialog" class="fixed inset-0 z-50 hidden">
+      <div class="fixed inset-0 bg-black/60" onclick="closeDialog('specialMessageDialog')"></div>
+      <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 border border-pink-500 rounded-lg p-6 w-11/12 max-w-md">
+        <h3 class="text-pink-500 text-lg font-bold mb-4">codigo 2</h3>
+        <div class="py-4">
+          <p class="text-center text-lg text-white">
+            05-19-20-01-13-15-19 -- 02-05-13 -- 06-09-14-01-14-03-05-09-18-01-14-05-14-20-05
+          </p>
+        </div>
+        <button 
+          class="absolute right-2 top-2 text-gray-400 hover:text-white"
+          onclick="closeDialog('specialMessageDialog')"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <section class="mb-16 relative">
+      <div 
+        id="fakeAd"
+        class="bg-gradient-to-r from-yellow-400 to-red-500 p-6 rounded-lg text-center cursor-pointer hover:shadow-xl transition-shadow absolute right-0 transform rotate-3"
+        style="width: 280px;"
+      >
+        <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-2 py-0.5 rounded-bl">Ad</div>
+        <h2 class="text-lg md:text-xl font-bold text-white mb-2 animate-pulse" id="IPHONE">
+          🔥 BUQUÊ DE FLORES 🔥
+        </h2>
+      </div>
+    </section>
+
+    
+    
+    <!-- Fake Ad Dialog -->
+    <footer>
+      <div id="fakeAdDialog" class="fixed inset-0 z-50 hidden">
+        <div class="fixed inset-0 bg-black/60" onclick="closeDialog('fakeAdDialog')"></div>
+        <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 border border-pink-500 rounded-lg p-6 w-11/12 max-w-md">
+          <h3 class="text-pink-500 text-lg font-bold mb-4 flex items-center">
+            <span class="mr-2">🎁</span> Surpresa
+          </h3>
+          <div class="py-4">
+            <p class="text-center text-lg text-white">
+              em breve
+            </p>
+          </div>
+          <button
+            class="absolute right-2 top-2 text-gray-400 hover:text-white"
+            onclick="closeDialog('fakeAdDialog')"
+          >
+            ✕
+          </button>
+        </div>
+    </footer>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

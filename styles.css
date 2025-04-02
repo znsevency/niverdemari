@@ -1,0 +1,277 @@
+
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+
+:root {
+  --primary: #000000;
+  --secondary: #9B87F5;
+  --accent: #71C9FF;
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #9CA3AF;
+  --border: #374151;
+  --radius: 0.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  animation: confetti 5s ease-in-out forwards;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Envelope */
+.envelope {
+  perspective: 1000px;
+}
+
+.envelope-flap {
+  transform-origin: top;
+  transition: transform 1s ease;
+}
+
+.envelope-open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-open .letter {
+  transform: translateY(-80px);
+  z-index: 30;
+}
+
+.envelope-open .letter-content {
+  display: block;
+  
+}
+
+/* Polaroid */
+.polaroid {
+  background-color: white;
+  padding: 10px;
+  padding-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(0deg);
+  z-index: 10;
+}
+
+/* Scroll Area */
+.scroll-area {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--muted);
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+/* Toast */
+#toast {
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+    display: none;
+  }
+}
+
+/* Music Item */
+.music-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #374151;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.music-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.music-info h3 {
+  font-weight: 500;
+  color: white;
+}
+
+.music-info p {
+  font-size: 14px;
+  color: #9CA3AF;
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.music-emoji {
+  font-size: 20px;
+}
+
+.play-button {
+  background-color: #FF71D0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.play-button.playing {
+  background-color: #EF4444;
+}
+
+.reason-item {
+  padding: 16px;
+  background-color: #374151;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.reason-number {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 12px;
+  color: #FF71D0;
+}
+
+.heart-icon {
+  margin-left: auto;
+  color: #FF71D0;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.heart-icon:hover {
+  transform: scale(1.25);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+.heart {
+  color: #FF71D0;
+  font-size: 16px;
+}
+
+.music-icon {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.bg-gradient-to-br {
+  background: #1a1a1a;
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, #FBBF24, #EF4444);
+}
+
+/* #fakeAd {
+  width: 15vh !important;
+  height: 1vh;
+  font-size: 10px !important;
+}
+
+
+#IPHONE {
+  font-size: 10px !important;
+} */
+
+.invi {
+  visibility: hidden;
+}
+
+.text-gray-300 {
+  color: #000000;
+}
