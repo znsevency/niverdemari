@@ -275,3 +275,17 @@ h1, h2, h3, h4, h5, h6 {
 .text-gray-300 {
   color: #000000;
 }
+
+/* @media (max-width: 600px) {
+  img {
+    width: 80% !important;
+    display: block !important;
+    margin: auto !important;
+  }
+} */
+
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important; 
+}
